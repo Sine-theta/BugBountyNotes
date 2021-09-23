@@ -1,0 +1,2 @@
+you will first need to go to the Repeater menu and ensure that the "Update Content-Length" option is unchecked. 
+You need to include the trailing sequence \r\n\r\n following the final 0. 
