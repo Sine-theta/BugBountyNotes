@@ -1,0 +1,56 @@
+	#1
+  • Refer Portswigger for theory     
+
+
+From <https://portswigger.net/web-security/host-header/exploiting> 
+
+	• Check for flawed validation:
+
+	GET /example HTTP/1.1
+	Host: vulnerable-website.com:bad-stuff-here 
+	
+	• Inject duplicate host headers:
+
+	GET /example HTTP/1.1
+	Host: vulnerable-website.com
+	Host: bad-stuff-here 
+	
+	• Supply an absolute URL:
+
+	GET https://vulnerable-website.com/ HTTP/1.1
+	Host: bad-stuff-here 
+	
+	Note that you may also need to experiment with different protocols. Servers will sometimes behave differently depending on whether the request line contains an HTTP or an HTTPS URL. 
+	
+	• Add line wrapping:
+
+	GET /example HTTP/1.1
+	 Host: bad-stuff-here
+	Host: vulnerable-website.com
+	
+
+	
+	
+	
+	TO ESCALATE THIS ATTCK REFER 'HTTP REQUEST SMUGGLING'
+	
+	
+	
+	
+	
+	
+#2	
+	
+Host header can skip to other page also, example case, i want to activate my account so you can skip the step, and then you can get direct activate without correct step (Bug host header on user activation) or we can say bypass user activation, Other example you can bypass a payment, otp etc with host header injection.
+
+#3
+Alternate for X-Forwarded-Host:
+
+	• X-Host 
+	• X-Forwarded-Server 
+	• X-HTTP-Host-Override 
+	• Forwarded 
+	
+	From <https://portswigger.net/web-security/host-header/exploiting> 
+	
+	
