@@ -1,0 +1,1 @@
+Hint: change origin header. If it get reflected in response code, copy paste the url in the available script and open it in new html page or with example.com. Before that in the Burp Suite itself check the response if it has any credentials in order to have a successful attack.
